@@ -1,0 +1,37 @@
+
+.icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+.icon-check__active{
+    color: #00be03;
+}
+
+.todo-list__item{
+    display: inherit;
+    width: 80%;
+    justify-content: flex-start;
+    background-color: #fafafa;
+    box-shadow: 0px 5px 50px 0px #20232926;
+    border-radius: 2px;
+
+    align-items: center;
+    position: relative;
+}
+.todo-list__item__content__completed{
+    text-decoration: line-through;
+}
+.icon-delete{
+    position: absolute;
+    right: 0.5rem;
+    top: -1.25rem;
+    
+}
+.icon-delete:hover{
+    color: #ff0000;
+}

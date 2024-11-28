@@ -1,0 +1,15 @@
+.create-todo{
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background: #61DAFA;
+    border: 0;
+    box-shadow: 0px 5px 25px 0px #61DAFA80;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #fff;
+    border-radius: 50%;
+
+}

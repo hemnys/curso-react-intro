@@ -1,3 +1,5 @@
+import './TodoItem.css'
+
 function TodoItem({ text, completed }) {
   return (
    <li className="todo-list__item">
