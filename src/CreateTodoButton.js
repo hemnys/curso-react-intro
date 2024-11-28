@@ -2,7 +2,7 @@
 
 function CreateTodoButton() {
   return (
-   <button>+</button>
+   <button type="button" className="create-todo">+</button>
   )
 }
 

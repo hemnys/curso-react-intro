@@ -1,5 +1,5 @@
 
-import './App.css';
+import { CreateTodoButton } from './CreateTodoButton';
 import { TodoCounter } from './TodoCounter';
 import { TodoItem } from './TodoItem';
 import { TodoList } from './TodoList';
@@ -21,6 +21,7 @@ function App() {
         <TodoItem key={todo.text} {...todo} />)  
       )}
     </TodoList>
+    <CreateTodoButton />
    </>
   );
 }

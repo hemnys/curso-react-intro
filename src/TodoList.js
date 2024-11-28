@@ -1,6 +1,6 @@
 function TodoList({ children }) {
     return (
-     <ul>{ children }</ul>
+     <ul className="todo-list">{ children }</ul>
     )
   }
   
