@@ -1,32 +1,12 @@
-import React from "react";
-import { CreateTodoButton } from "../CreateTodoButton";
-import { TodoCounter } from "../TodoCounter";
-import { TodoItem } from "../TodoItem";
-import { TodoList } from "../TodoList";
-import { TodoSearch } from "../TodoSearch";
+import { useState } from "react";
+import { AppUI } from "./AppUI";
+import { useLocalStorage } from "./useLocalStorage";
 
-
-
-function useLocalStorage(itemName, initialValue) {
-
-  const localStorageItem = localStorage.getItem(itemName);
-  const parsedItem = (!localStorageItem) ? initialValue : JSON.parse(localStorageItem); 
-  const [item, setItem] = React.useState(parsedItem);
-  const saveItem = (newItem) => {
-    const stringifiedItem = JSON.stringify(newItem);
-    localStorage.setItem(itemName,stringifiedItem );
-    setItem(newItem);
-  }
-  return [
-    item,
-    saveItem,
-  ];
-}
 
 function App() {
 
-  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
-  const [searchValue, setSearchValue] = React.useState("");
+  const {item:todos, saveItem:saveTodos,loading,error} = useLocalStorage("TODOS_V1", []);
+  const [searchValue, setSearchValue] = useState("");
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
   const filteredTodos = todos.filter((todo) =>
@@ -45,21 +25,17 @@ function App() {
   }
 
   return (
-    <>
-      <TodoCounter total={totalTodos} completed={completedTodos} />
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-      <TodoList>
-        {filteredTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            {...todo}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList>
-      <CreateTodoButton />
-    </>
+    <AppUI
+    totalTodos = {totalTodos}
+    completedTodos = {completedTodos}
+    searchValue = {searchValue}
+    setSearchValue = {setSearchValue}
+    filteredTodos = {filteredTodos}
+    completeTodo = {completeTodo}
+    deleteTodo = {deleteTodo}
+    loading = {loading}
+    error = {error}
+    />
   );
 }
 

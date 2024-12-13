@@ -13,7 +13,7 @@
     position: absolute;
     right: 0.5rem;
     top: -1.25rem;
-    
+
 }
 .icon-container-check:hover .icon-svg{
     fill: green;
