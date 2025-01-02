@@ -8,7 +8,12 @@ function TodoSearch() {
     setSearchValue
   } = useContext(TodoContext);
   return (
-    <input className='search-component' placeholder="Cortar la cebolla" value={ searchValue } onChange={(event)=>{setSearchValue(event.target.value)}} />
+    <input 
+      className='search-component' 
+      placeholder="Cortar la cebolla" 
+      value={ searchValue } 
+      onChange={(event)=>{setSearchValue(event.target.value)}} 
+    />
   )
 }
 export { TodoSearch }

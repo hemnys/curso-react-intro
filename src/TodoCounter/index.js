@@ -8,7 +8,12 @@ function TodoCounter() {
     completedTodos
   } = useContext(TodoContext);
   return (
-    <h1 className='heading'>Has completado <span>{ completedTodos }</span> de <span>{ totalTodos }</span> TODOs</h1>
+    <h1 className='heading'>
+      Has completado 
+      <span>{ completedTodos }</span> 
+      de <span>{ totalTodos }</span> 
+      TODOs
+    </h1>
   )
 }
 
